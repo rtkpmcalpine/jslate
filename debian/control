@@ -1,9 +1,10 @@
-Source: awn
+Source: jslate
 Maintainer: Arctic Wolf Networks Inc. <dev@arcticwolf.com>
 Section: net
 Priority: optional
 
 Package: jslate
+Architecture: all
 Description: Write your dashboards in pure html/js
  jSlate enables you to setup dashboards for displaying data easily.
  A dashboard consists of widgets. Widgets are html/javascript and

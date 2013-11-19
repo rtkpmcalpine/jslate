@@ -1,0 +1,11 @@
+jslate
+jslate_*.dsc
+jslate_*.tar.gz
+jslate_*_*.changes
+jslate_*_*.deb
+control
+changelog
+jslate.debhelper.log
+debhelper.log
+jslate.substvars
+files

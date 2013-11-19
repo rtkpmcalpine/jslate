@@ -1,0 +1,30 @@
+#! /bin/bash
+CMD=$1
+PACKAGE=jslate
+if [ "$CMD" == "clean" ]; then
+  dh_clean
+  rm -rf debian/$PACKAGE
+  if [ $? -ne 0 ]; then
+    exit $?
+  fi
+elif [ "$CMD" == "build" ]; then
+  echo "Nothing to build."
+elif [ "$CMD" == "binary" ]; then
+  if [ $? -ne 0 ]; then
+    exit $?
+  fi
+  mkdir -p debian/$PACKAGE/opt/jslate
+
+  # Specify files that get installed here
+  cp -rp app debian/$PACKAGE/opt/jslate
+  cp -rp index.php debian/$PACKAGE/opt/jslate
+  cp -rp lib debian/$PACKAGE/opt/jslate
+  cp -rp plugins debian/$PACKAGE/opt/jslate
+
+  dh_gencontrol -p$PACKAGE
+  dh_md5sums -p$PACKAGE
+  dh_builddeb -p$PACKAGE
+else
+  echo "Unknown debian/rules command: $CMD"
+  exit 1
+fi
