@@ -20,6 +20,7 @@ elif [ "$CMD" == "binary" ]; then
   cp -rp index.php debian/$PACKAGE/opt/jslate
   cp -rp lib debian/$PACKAGE/opt/jslate
   cp -rp plugins debian/$PACKAGE/opt/jslate
+  cp -rp .htaccess debian/$PACKAGE/opt/jslate
 
   dh_gencontrol -p$PACKAGE
   dh_md5sums -p$PACKAGE
